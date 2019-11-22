@@ -31742,13 +31742,14 @@ var _react = _interopRequireDefault(require("react"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Navbar = function Navbar() {
+var Navbar = function Navbar(_ref) {
+  var props = Object.assign({}, _ref);
   return _react.default.createElement(_react.default.Fragment, null, _react.default.createElement("nav", {
     className: "navbar navbar-expand-sm navbar-light bg-light"
   }, _react.default.createElement("a", {
     className: "navbar-brand",
     href: "#"
-  }, "Navbar"), _react.default.createElement("button", {
+  }, props.title), _react.default.createElement("button", {
     className: "navbar-toggler d-lg-none",
     type: "button",
     "data-toggle": "collapse",
@@ -31822,12 +31823,19 @@ var _Navbar = _interopRequireDefault(require("./components/Navbar"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var _default = function _default() {
-  return _react.default.createElement(_Navbar.default, null);
+  return retrun(_react.default.createElement(_Navbar.default, {
+    title: "Mango Airlines"
+  }));
 };
 
 exports.default = _default;
 },{"react":"node_modules/react/index.js","./components/Navbar":"components/Navbar.js"}],"index.js":[function(require,module,exports) {
 "use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.Welcome = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -31835,10 +31843,20 @@ var _reactDom = _interopRequireDefault(require("react-dom"));
 
 var _App = _interopRequireDefault(require("./App"));
 
+var _Navbar = _interopRequireDefault(require("./components/Navbar"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-_reactDom.default.render(_react.default.createElement(_App.default, null), document.getElementById('app'));
-},{"react":"node_modules/react/index.js","react-dom":"node_modules/react-dom/index.js","./App":"App.js"}],"../../../../../.npm/_npx/25933/lib/node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+var Welcome = function Welcome(props) {
+  return _react.default.createElement("h1", null, " Hello, ", props.name);
+};
+
+exports.Welcome = Welcome;
+
+_reactDom.default.render(_react.default.createElement(_react.default.Fragment, null, _react.default.createElement(_Navbar.default, null), _react.default.createElement(Welcome, {
+  name: "Gabriel"
+})), document.getElementById('app'));
+},{"react":"node_modules/react/index.js","react-dom":"node_modules/react-dom/index.js","./App":"App.js","./components/Navbar":"components/Navbar.js"}],"../../../../../.npm/_npx/12288/lib/node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -31866,7 +31884,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50291" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49880" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -32042,5 +32060,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../../../../../.npm/_npx/25933/lib/node_modules/parcel/src/builtins/hmr-runtime.js","index.js"], null)
+},{}]},{},["../../../../../.npm/_npx/12288/lib/node_modules/parcel/src/builtins/hmr-runtime.js","index.js"], null)
 //# sourceMappingURL=/02-Parcel.e31bb0bc.js.map
