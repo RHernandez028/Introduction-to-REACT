@@ -4,15 +4,10 @@ import App from './App'
 import Navbar from './components/Navbar';
 
 
-export const Welcome = (props) => {
-    return <h1> Hello, {props.name}</h1>
-}
+// export const Welcome = (props) => {
+//     return <h1> Hello, {props.name}</h1>
+// }
 
 
 
-ReactDOM.render(
-    <>
-        <Navbar />
-        <Welcome name="Gabriel"/>
-    </>
-,document.getElementById('app'))
+ReactDOM.render(<App />, document.getElementById('app'))
